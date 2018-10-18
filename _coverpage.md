@@ -8,6 +8,6 @@
 * 代码示例
 
 [GitHub](https://github.com/guofei9987/Matlab_notes/)
-[Get Started](/docs/1_程序设计/OOP/)
+[Get Started](/docs/1_程序设计/OOP)
 
 

@@ -134,12 +134,12 @@ isa(x,'Point2D')
 
 
 # 3、Value Class 和 Handle Class
-Value Class赋值后，不产生副本，但修改后自动产生副本
-Handle Class赋值后，不产生副本，修改后也不产生副本（浅拷贝）
+Value Class赋值后，不产生副本，但修改后自动产生副本  
+Handle Class赋值后，不产生副本，修改后也不产生副本（浅拷贝）  
 
-handle类有一个method：delete，调用这个method，可以删除method对应的数据，只剩下一个失效的handle对象（即使这个数据被多个handle对应）
-1、当内存引用计数为0之前，会自动调用delete方法
-2、当对象离开作用域时，会自动调用delete方法
+handle类有一个method：delete，调用这个method，可以删除method对应的数据，只剩下一个失效的handle对象（即使这个数据被多个handle对应）  
+1、当内存引用计数为0之前，会自动调用delete方法  
+2、当对象离开作用域时，会自动调用delete方法  
 
 value类没有delete方法
 
@@ -168,42 +168,42 @@ p.notify('events_class1')
 
 
 # 5、文件结构
-定义和方法分开放：
-1、必须放到同一个文件夹，文件夹名字为@class_name（文件夹名字就是类名）
-2、类m文件中有methods的定义：
+定义和方法分开放：  
+1、必须放到同一个文件夹，文件夹名字为@class_name（文件夹名字就是类名）  
+2、类m文件中有methods的定义：  
 ```
 [y]=myfun1()
 myfun2()
 ```
-放methods的m文件中也是用上述表达方式
-3、Constructor,delete必须放到类定义中
-4、set和get方法必须放到类定义中
-5、static 方法必须放到类定义中
+放methods的m文件中也是用上述表达方式  
+3、Constructor,delete必须放到类定义中  
+4、set和get方法必须放到类定义中  
+5、static 方法必须放到类定义中  
 
-这样：可以把@Point所在文件夹中运行
+这样：可以把@Point所在文件夹中运行  
 
-打包：
-目录以+开头，例如：
-+my_package
+打包：  
+目录以+开头，例如：  
++my_package  
 
-继承时，不要忘记加package名
+继承时，不要忘记加package名  
 
 
-使用某个类
-p1=my_package.class1()
+使用某个类  
+p1=my_package.class1()  
 
-导入全部的类
-import my_package.*
-这样，调用类的时候，就无须加上my_package.了
-调用my_package中的其它文件，也无须加上my_package
-局部函数：
-在类的m文件的结尾可以放一个function，这个function可以被类调用
+导入全部的类  
+import my_package.*  
+这样，调用类的时候，就无须加上my_package.了  
+调用my_package中的其它文件，也无须加上my_package  
+局部函数：  
+在类的m文件的结尾可以放一个function，这个function可以被类调用  
 
 
 
 # 6、save和load
-瞬态属性：不会被save到mat中
-properties(Transient)
+瞬态属性：不会被save到mat中  
+properties(Transient)  
 
 <table>
 <thead><tr class="tableizer-firstrow"><th>属性</th><th>是否分配内存</th><th>是否save到mat</th></tr></thead><tbody>
@@ -213,13 +213,13 @@ properties(Transient)
 </tbody></table>
 
 # GUI
-几个需要的函数
-hfig=get(o,'Parent')
-取得o的Parent。例如，o是一个控件，那么，返回控件所在的figure
+几个需要的函数  
+hfig=get(o,'Parent')  
+取得o的Parent。例如，o是一个控件，那么，返回控件所在的figure  
 
-findobj(hfig,'Tag','inputbox')
-与get相反的操作，找到某个控件
+findobj(hfig,'Tag','inputbox')  
+与get相反的操作，找到某个控件  
 
 
-set(withdrawButton,'callback',@(o,e)withdraw_callback(o,e));
-添加某个控件的回调函数
+set(withdrawButton,'callback',@(o,e)withdraw_callback(o,e));  
+添加某个控件的回调函数  

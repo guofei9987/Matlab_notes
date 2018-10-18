@@ -13,7 +13,7 @@ W = unstack(T,'Snowfall','Town')
 ```
 
 
-stack
-unstack
-是sas中的转秩
-具体参见doc
+stack  
+unstack  
+是sas中的转秩  
+具体参见doc  

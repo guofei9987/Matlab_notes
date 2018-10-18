@@ -86,19 +86,19 @@ function [y1,y2,y3]=myfun(x1,x2,x3,x4)
 # 其它
 size
 
-intersect 返回两表中的相同的行                       返回table
-ismember 查询表A中的行是否在表B中也出现   返回逻辑向量
-setdiff 查询两表之间的差异                                返回table
-unique 返回的表中没有相同的行
-sextor 两个集合交集的非
-union 两个集合的并
-join 自然连接
-innterjoin 内连接
-outerjoin 外连接
+intersect 返回两表中的相同的行                       返回table  
+ismember 查询表A中的行是否在表B中也出现   返回逻辑向量  
+setdiff 查询两表之间的差异                                返回table  
+unique 返回的表中没有相同的行  
+sextor 两个集合交集的非  
+union 两个集合的并  
+join 自然连接  
+innterjoin 内连接  
+outerjoin 外连接  
 
-Data organization的操作
-summary 返回table的基本信息
-stack 把table的各列摞成一列
-unstack 把table的某一列展开成为若干列
-ismissing 找到table中那些没有赋值的项，返回logical index
-standizeMissing 给未赋值项赋默认值
+Data organization的操作  
+summary 返回table的基本信息  
+stack 把table的各列摞成一列  
+unstack 把table的某一列展开成为若干列  
+ismissing 找到table中那些没有赋值的项，返回logical index  
+standizeMissing 给未赋值项赋默认值  

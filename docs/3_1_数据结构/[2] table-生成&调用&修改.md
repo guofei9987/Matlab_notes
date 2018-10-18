@@ -3,6 +3,7 @@
 ```
 T = readtable(FILENAME,'FileType',FILETYPE)
 ```
+
  .txt, .dat, .csv
 
 .xls, .xlsx, .xlsb, .xlsm, .xltm, .xltx, .ods:
