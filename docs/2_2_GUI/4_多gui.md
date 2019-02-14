@@ -1,6 +1,10 @@
+
+# 多GUI
+```
 h=gcf;  
 wenjian;  
 close(h);  
+```
 
 http://blog.sina.com.cn/s/blog_630c70530100ies5.html  
 http://blog.csdn.net/iuway/article/details/7845516  

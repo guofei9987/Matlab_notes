@@ -1,22 +1,23 @@
 
-# UML
+## UML
 类的继承：空心箭头  
 组合关系：实心菱形，在constructor中，把每个属性定义为其它的类  
 聚集关系：空心菱形，不在constructor中定义  
-  
+
 属性：  
+```
 Access  
 +public 都可以访问  
 #protected 该类和该类的子类可以访问  
 -private 该类可以访问  
-  
+```
 SetAccess  
 GetAccess  
-  
 
-# 基本篇
 
-## 查询属性和方法
+## 基本篇
+
+### 查询属性和方法
 ```
 t=timer
 properties(t)
@@ -26,7 +27,7 @@ superclasses(t)
 whos%查询当前变量
 ```
 
-## class的一般用法示例
+### class的一般用法示例
 ```
 classdef Point2D<handle
     properties
@@ -47,7 +48,7 @@ classdef Point2D<handle
 end
 ```
 
-## 关于property：
+### 关于property：
 1. 直接赋值  
 k=Point2D(2,3)  
 k.x=555  
@@ -95,7 +96,7 @@ properties(Access=protected)
 8. public属性
 默认的属性
 
-# 关于methods
+## 关于methods
 
 methods中的function可以放到一个独立的文件中，在methods中仅给出声明
 ```
@@ -106,7 +107,7 @@ normalize(obj)
 Constructor，Destructor，static
 ```
 
-## 调用methods
+### 调用methods
 
 ```
 obj.memberFunction(arg1,arg2)
@@ -115,7 +116,7 @@ memberFunction(obj,arg1,arg2)
 
 以上两个表达式等价，但表达式2非常不建议使用
 
-## 任何methods都不隶属于对象
+### 任何methods都不隶属于对象
 ```
 p1=Point2D(1,1)
 p2=Point3D(1,1,1)
@@ -124,16 +125,16 @@ normalize(p1)和normalize(p2)分别调用不同的methods
 
 在调用methods时，Dispathcer会动态判断methods的signature，signature=函数名+所属类。
 
-### 判断x是否是某个类型
+#### 判断x是否是某个类型
 ```
 isa(x,'Point2D')
 ```
 
 
-## 类的继承
+### 类的继承
 
 
-# 3、Value Class 和 Handle Class
+## 3、Value Class 和 Handle Class
 Value Class赋值后，不产生副本，但修改后自动产生副本  
 Handle Class赋值后，不产生副本，修改后也不产生副本（浅拷贝）  
 
@@ -143,7 +144,7 @@ handle类有一个method：delete，调用这个method，可以删除method对�
 
 value类没有delete方法
 
-# 4、事件和响应
+## 4、事件和响应
 响应函数可以是普通函数
 ```
 lh=addlistener(eventObject,'EventName',@functionName)
@@ -167,7 +168,7 @@ p.notify('events_class1')
 ```
 
 
-# 5、文件结构
+## 5、文件结构
 定义和方法分开放：  
 1、必须放到同一个文件夹，文件夹名字为@class_name（文件夹名字就是类名）  
 2、类m文件中有methods的定义：  
@@ -201,7 +202,7 @@ import my_package.*
 
 
 
-# 6、save和load
+## 6、save和load
 瞬态属性：不会被save到mat中  
 properties(Transient)  
 
@@ -212,7 +213,7 @@ properties(Transient)
  <tr><td>Dependent</td><td>N</td><td>N</td></tr>
 </tbody></table>
 
-# GUI
+## GUI
 几个需要的函数  
 hfig=get(o,'Parent')  
 取得o的Parent。例如，o是一个控件，那么，返回控件所在的figure  
