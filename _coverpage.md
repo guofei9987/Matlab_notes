@@ -8,6 +8,4 @@
 * 代码示例
 
 [GitHub](https://github.com/guofei9987/Matlab_notes/)
-[Get Started](/_sidebar)
-
-
+[Get Started](/_main)

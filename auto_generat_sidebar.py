@@ -1,64 +1,25 @@
-# import os
-#
-# repository_path = r'C:\Users\guofei8\Desktop\git\GitHub\Matlab_notes'
-#
-# doc_path = repository_path + r'\docs'
-#
-# path_walker = os.walk(doc_path, topdown=True)
-#
-#
-# class TreeNode:
-#     def __init__(self, value, type, layer):
-#         self.value = value
-#         self.type = type  # 'file' or 'path'
-#         self.layer = layer
-#         self.children = dict()
-#
-#
-# class Tree:
-#     def __init__(self):
-#         self.root = TreeNode('root', 'path', 0)
-#
-#     def addTreeNode(self, path, dirs, nondirs):
-#         pointer = self.root
-#         for i in path:
-#             if i not in pointer.children:
-#                 pointer.children[i] = TreeNode(i, 'path', pointer.layer + 1)
-#             pointer = pointer.children[i]
-#         for i in dirs:
-#             pointer.children[i] = TreeNode(value='* ' + i, type='path', layer=pointer.layer + 1)
-#         for i in nondirs:
-#             file_name = '* [' + i.replace('.md','') + ']' + '(' + '/'.join(path) +'/'+ i + ')'  # 直接在file格式的叶节点内写入Markdown语句
-#             pointer.children[i] = TreeNode(value=file_name, type='file', layer=pointer.layer + 1)
-#
-#     def add_all_tree_node(self, path_walker):
-#         for top, dirs, nondirs in path_walker:
-#             path = top.replace(repository_path, '').split('\\')[1:]
-#             self.addTreeNode(path, dirs, nondirs)
-#
-#     def pre_order(self, root):
-#         return '' if (root is None) \
-#             else ((root.layer-2) * '    ' if root.layer>1 else '# ') + root.value + '\n' + \
-#                  ''.join([self.pre_order(i) for i in root.children.values()])
-#
-#
-# tree = Tree()
-# tree.add_all_tree_node(path_walker)
-# a = tree.pre_order(tree.root.children['docs'])
-# print(a)
-#
-
-
 # 用二叉树自动print sidebar
 
 # %%
 import os
+import re
+import string
 
+# 字数统计
+regex_chinese = re.compile('[\u4e00-\u9fa5]') # 汉字
+regex_English = re.compile('[0-9a-zA_Z]+') # 数字和英语单词
+# 中文标点和英文标点
+regex_punctuation = re.compile('[!"()*+,./:;<=>?{|}~。；，：“”（）、？《》]')
 
 def word_count(file_name_md):
     f = open(file_name_md, 'r', encoding='utf-8')
     passages = f.readlines()
-    word_num = sum([len(passage.replace('\n', '').replace(' ', '')) for passage in passages])
+    # word_num = sum([len(passage.replace('\n', '').replace(' ', '')) for passage in passages])
+    word_num = sum([len(regex_chinese.findall(passage))
+                    + len(regex_English.findall(passage))
+                    + len(regex_punctuation.findall(passage))
+                    for passage in passages])
+
     f.close()
     return word_num
 
@@ -98,12 +59,9 @@ class Tree:
             # 每个节点的 name 是规整后的 markdown语句，这样前序遍历不需要太多处理就可以满足需求
             word_num = word_count('\\'.join([self.path1] + path + [i]))
 
-            # file_name_md = '* [' + i.replace('.md', '') + \
-            #                ('<sup style = "color:red">' + str(word_num) + '字<sup>' if word_num else '') \
-            #                + ']' \
-            #                + '(' + '/'.join(path) + '/' + i + ')'
             file_name_md = '* [' + i.replace('.md', '') + \
-                           ']' \
+                           ('<sup style = "color:red">' + str(word_num) + '字<sup>' if word_num else '') \
+                           + ']' \
                            + '(' + '/'.join(path) + '/' + i + ')'
             pointer.children[i] = TreeNode(name=file_name_md,
                                            type='file',
@@ -127,7 +85,7 @@ class Tree:
         return 0 if (root is None) else root.word_num + sum([self.pre_order2(i) for i in root.children.values()])
 
 
-path = r'C:\Users\guofei8\Desktop\git\GitHub\Matlab_notes\docs'
+path = os.getcwd() + r'\docs'
 tree = Tree(path)
 sidebar = tree.pre_order(tree.root.children[tree.path2])
 print(sidebar)
@@ -155,6 +113,11 @@ f = open('_sidebar.md', 'w', encoding='utf-8')
 f.write(head + content + tail)
 f.close()
 
+f = open('_main.md', 'w', encoding='utf-8')
+# print(head+content)
+# f.write(head+content.encode('utf-8').decode('utf-8'))
+f.write(content)
+f.close()
 
 # %%
 # 统计每个板块的字数
@@ -193,4 +156,3 @@ def word_ana():
     plotly.offline.plot(fig, filename='c:\\abc\\example.html')
 
 # word_ana()
-
