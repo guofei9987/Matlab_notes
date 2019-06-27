@@ -1,3 +1,3 @@
-## 读书笔记
+## Matlab 学习笔记
 
-点击左边的目录翻翻看吧
+http://www.guofei.site/Matlab_notes/
