@@ -1,8 +1,3 @@
-
-<a href="http://www.guofei.site" target='blog'>
-<img src="http://www.guofei.site/public/img/me.png"  alt="回到blog" height="64" width="64">
-</a>
-
 * 1_程序设计
     * [0_总览<sup style = "color:red">386字<sup>](docs/1_程序设计/0_总览.md)
     * [1_通用命令<sup style = "color:red">726字<sup>](docs/1_程序设计/1_通用命令.md)
@@ -66,5 +61,3 @@
     * [时间序列<sup style = "color:red">36字<sup>](docs/其它/时间序列.md)
     * [期权<sup style = "color:red">139字<sup>](docs/其它/期权.md)
 * [编程技巧<sup style = "color:red">709字<sup>](docs/编程技巧.md)
-
-
