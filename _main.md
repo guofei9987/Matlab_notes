@@ -1,16 +1,14 @@
 * 1_统计
-    * [1_描述性统计<sup style = "color:red">645字<sup>](docs/1_统计/1_描述性统计.md)
-    * [2_描述性统计绘图<sup style = "color:red">357字<sup>](docs/1_统计/2_描述性统计绘图.md)
-    * [3_分布的生成<sup style = "color:red">382字<sup>](docs/1_统计/3_分布的生成.md)
-    * [5_随机种子&排列组合<sup style = "color:red">581字<sup>](docs/1_统计/5_随机种子&排列组合.md)
-    * [6_多元线性回归<sup style = "color:red">1338字<sup>](docs/1_统计/6_多元线性回归.md)
-    * [7_PCA<sup style = "color:red">565字<sup>](docs/1_统计/7_PCA.md)
-    * [8_factoran<sup style = "color:red">182字<sup>](docs/1_统计/8_factoran.md)
+    * [1_描述性统计<sup style = "color:red">981字<sup>](docs/1_统计/1_描述性统计.md)
+    * [3_随机变量<sup style = "color:red">451字<sup>](docs/1_统计/3_随机变量.md)
+    * [5_随机种子&排列组合<sup style = "color:red">494字<sup>](docs/1_统计/5_随机种子&排列组合.md)
+    * [6_多元线性回归<sup style = "color:red">1341字<sup>](docs/1_统计/6_多元线性回归.md)
+    * [7_PCA&FA<sup style = "color:red">747字<sup>](docs/1_统计/7_PCA&FA.md)
 * 2_代数.md
-    * [代数<sup style = "color:red">717字<sup>](docs/2_代数.md/代数.md)
+    * [代数<sup style = "color:red">719字<sup>](docs/2_代数.md/代数.md)
 * 3_分析
     * [1_符号计算<sup style = "color:red">211字<sup>](docs/3_分析/1_符号计算.md)
-    * [2_微积分<sup style = "color:red">547字<sup>](docs/3_分析/2_微积分.md)
+    * [2_微积分<sup style = "color:red">554字<sup>](docs/3_分析/2_微积分.md)
     * [3_方程<sup style = "color:red">687字<sup>](docs/3_分析/3_方程.md)
     * [4_复变函数<sup style = "color:red">28字<sup>](docs/3_分析/4_复变函数.md)
     * [5_插值<sup style = "color:red">316字<sup>](docs/3_分析/5_插值.md)
