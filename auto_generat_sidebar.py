@@ -60,7 +60,6 @@ class Tree:
             word_num = word_count('\\'.join([self.path1] + path + [i]))
 
             file_name_md = '* [' + i.replace('.md', '') \
-                           # + ('<sup style = "color:red">' + str(word_num) + '字<sup>' if word_num else '') \
                            + ']' \
                            + '(' + '/'.join(path) + '/' + i + ')'
             pointer.children[i] = TreeNode(name=file_name_md,
