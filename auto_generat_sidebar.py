@@ -59,8 +59,8 @@ class Tree:
             # 每个节点的 name 是规整后的 markdown语句，这样前序遍历不需要太多处理就可以满足需求
             word_num = word_count('\\'.join([self.path1] + path + [i]))
 
-            file_name_md = '* [' + i.replace('.md', '') + \
-                           ('<sup style = "color:red">' + str(word_num) + '字<sup>' if word_num else '') \
+            file_name_md = '* [' + i.replace('.md', '') \
+                           # + ('<sup style = "color:red">' + str(word_num) + '字<sup>' if word_num else '') \
                            + ']' \
                            + '(' + '/'.join(path) + '/' + i + ')'
             pointer.children[i] = TreeNode(name=file_name_md,
